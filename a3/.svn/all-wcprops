@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3
+END
+printindex.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/printindex.c
+END
+punc.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/punc.c
+END
+query.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/query.c
+END
+queryone.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/queryone.c
+END
+freq_list.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/freq_list.c
+END
+worker.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/worker.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/Makefile
+END
+freq_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/freq_list.h
+END
+indexer.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/indexer.c
+END
+worker.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/cscb09w16/tsevinc1/b09repo/!svn/ver/8/a3/worker.h
+END

@@ -1,0 +1,44 @@
+#!/bin/sh
+# check if it a directory and does it have permission
+if [ -d $1 ] && [ -r $1 ] && [ -w $1 ]
+then
+  # store the paths
+  PATH=$PATH:/courses/webspace/cscb09w16/bin
+  root=$PWD
+  for pic in $1/*
+  do # check if tis a JPEG
+    if file "$pic" | grep -q JPEG;
+    then
+      info=`exiftime -tg "$pic"`
+      year=`echo $info | cut -c18-21`
+      month=`echo $info | cut -c23-24`
+      if [ -e $year ] && ! [ -d $year ]
+      then # if year exists and not a directory
+        echo "name $year already exist but is not a directory">&2
+      else 
+        mkdir -p $year # if month exists and not a directory
+        if [ -e "$year/$month" ] && ! [ -d "$year/$month" ]
+        then
+          echo "name $month already exist but is not a directory">&2
+        else # if the pic.jpg exists and is a directory
+          mkdir -p "$year/$month"
+          if [ -d "$year/$month/$pic" ]
+          then
+            echo "$pic already exist but is a directory">&2
+          else # move the pictures if all conditions passed
+            mv "$root/$pic" "$root/$year/$month"
+          fi
+        fi
+      fi  
+    else # check if its empty or its no a jpg file
+    	if [ $pic != "$1/*" ]
+    	then 
+    	  echo "$pic is not a JPEG file.">&2
+    	else
+    	  echo "$1 is empty">&2
+    	fi
+    fi
+  done
+else
+  echo "$1 is not a directory">&2
+fi

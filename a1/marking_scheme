@@ -1,0 +1,83 @@
+
+mkpics:  35 points  -- create an html table with images
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+35
+
+We used pictures that you can find in the following directory:
+
+   /courses/webspace/cscb09w16/a1/pics/* 
+
+and tested your mkpics on the following 6 test cases:
+
+4 points: test with call with no arguments at all to make sure error message is generated and send to stderr
+      2 points for error message
+      2 points for sending it to stderr
+
+      mkpics > no_args_out  2>t0.stderr
+
+5 points: -- generate proper html for simple case with 1 full row
+
+      mkpics 3 pic1.jpg pic2.jpg pic3.jpg > t1.html 2>t1.stderr
+
+6 points: -- generate proper html for simple case with 3 pics and rowlength 1
+
+      mkpics 1 pic1.jpg pic2.jpg pic3.jpg > t2.html 2>t2.stderr 
+
+6 points: -- test w/ row length of 3 and 4 pics  & one absolute path
+
+      mkpics 3 pic1.jpg pic2.jpg /courses/webspace/cscb09w16/a1/pics/pic3.jpg pic4.jpg > t3.html 2>t3.stderr
+
+10 points: -- uses "file" command to detect non-jpeg images and skip those images: 
+   test with call with row length of 3 and 3 pics one of which is not a picture
+      6 points for detecting non-image and not including it, and building proper html table
+      2 points for generate error message 
+      2 points for sending error message to stderr (rather than stdout)
+
+      mkpics 3 p1.jpg p2.jpg /courses/webspace/cscb09w16/a1/pics/pic3.jpg not_a_jpg.jpg p4.jpg> t4.html 2>t4.stderr
+
+4 points: -- works properly if there are no valid images, i.e. create empty table (error message that no valid images were found is also ok)
+
+      mkpics 3 not_a_jpg.jpg not_a_jpg.jpg not_a_jpg.jpg  > t5.html 2>t5.stderr
+
+
+filepics: 35 points  -- files pictures in a given directory based on year and month
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+35
+
+We tested filepics on the following three test cases
+
+7 points:  we created a test directory called filepics_t1_dir with the following 2 pictures, each from a different year:
+     cp /courses/webspace/cscb09w16/a1/pics/pic1_2007_7.jpg /courses/webspace/cscb09w16/a1/pics/pic3_2006_4.jpg filepics_t1_dir
+     and ran your filepics on it (./filepics filepics_t1_dir 2>t6.stderr)
+          4 points:  correct directory structure (only directories that are needed have been created)
+          3 points:  pictures are filed (moved) not just copied
+
+23  points:  Similar test with pictures from 2 years, each with 2 months, and one invalid file.
+            (files we used:  cp /courses/webspace/cscb09w16/a1/pics/*_*jpg filepics_t2_dir)
+
+          12:  correct directory structure (only directories that are needed have been created)
+          8:  non-picture files are not filed
+          3 : pictures are filed (moved) not just copied
+
+5  points:  test that error message is generate if argument is not a valid directory
+
+          2 points: message is generated
+          3 points: its send to stderr
+
+
+mkpics2: 30 points -- creates a separate html table for each year (needs to include all valid pictures from month subdirectories)
+                      important: order of the tables, or order of pictures within a table does not matter
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+30
+
+30 points  --  test with rowsize of two and two years, first year (2012) has more pics (3) than one row, second year (2013) has less pics (1) than one row
+               no tests on invalid files, etc. since this has already been tested in part 1 (mkpics).
+               Sample test:  ./mkpics2 2 /courses/webspace/cscb09w13/a1/tree1 > mkpics2.test1.html 2>t9.stderr
+      6 points for two separate tables with h2 headings
+      12 points for proper formatting of table for year 1
+      12 points for proper formatting of table for year 2
+
+
